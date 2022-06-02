@@ -1,4 +1,4 @@
-import { Header, Sidebar } from "./components";
+import { Header, Post, Sidebar } from "./components";
 
 import './styles/global.css';
 
@@ -12,7 +12,9 @@ function App() {
       <div className={styles.wrapper}>
         <Sidebar />
 
-        
+        <main>
+          <Post />
+        </main>
       </div>
     </>
   );
