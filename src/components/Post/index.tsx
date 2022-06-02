@@ -22,6 +22,16 @@ export function Post() {
         <p>👉 <a href="#">jane.design/doctorcare</a></p>
         <p><a href="#">#novoprojeto</a> <a href="#">#nlw</a> <a href="#">#rocketseat</a></p>
       </div>
+
+      <form>
+        <strong>Leave your feedback</strong>
+
+        <textarea placeholder="Type your comment..." />
+
+        <footer>
+          <button type="submit">Publish</button>
+        </footer>
+      </form>
     </article>
   );
 }
