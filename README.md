@@ -22,9 +22,6 @@
   > <small>Posts feed on dark mode 🌑</small>
 </div>
 
-![Light mode](.github/imgs/light.jpg)
-![Dark mode](.github/imgs/dark.jpg)
-
 ## 💡 You will need
 
 - First, a cup of coffee; ☕
