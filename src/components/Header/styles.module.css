@@ -4,6 +4,9 @@
   justify-content: center;
   gap: 1rem;
 
+  position: sticky;
+  top: 0;
+
   background: var(--subtle-background-color);
   padding: 1.25rem 1rem;
 
