@@ -1,7 +1,9 @@
 .post {
-  background-color: var(--gray-800);
+  background-color: var(--subtle-background-color);
   border-radius: 8px;
   padding: 2.5rem;
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
 .post > header {
@@ -23,23 +25,23 @@
 
 .author > div > strong {
   line-height: 1.6;
-  color: var(--gray-100);
+  color: var(--hi-contrast);
 }
 
 .author > div > span {
   font-size: 0.875rem;
-  color: var(--gray-400);
+  color: var(--lo-contrast);
   font-weight: 400;
 }
 
 .post > header > time {
   font-size: 0.875rem;
-  color: var(--gray-400);
+  color: var(--lo-contrast);
   font-weight: 400;
 }
 
 .content {
-  color: var(--gray-300);
+  color: var(--hi-contrast);
   line-height: 1.6;
   margin-top: 1.5rem;
 }
@@ -51,7 +53,7 @@
 
 .content a {
   font-weight: bold;
-  color: var(--green-500);
+  color: var(--brand-color);
   text-decoration: none;
 
   padding: 2px 4px;
@@ -62,20 +64,20 @@
   transition: ouline-color 150ms ease-out, color 150ms ease-out;
 }
 
-.content a:hover {
-  color: var(--green-400);
+.content a:hover,
+.content a:focus {
+  color: var(--brand-hover-color);
 }
 
 .content a:focus-visible {
-  color: var(--green-400);
-  outline-color: var(--green-400);
+  outline-color: var(--brand-outline-color);
 }
 
 .post > form {
   width: 100%;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-600);
+  border-top: 1px solid var(--border-color);
 }
 
 .post > form:focus-within > footer {
@@ -85,22 +87,23 @@
 
 .post > form > strong {
   line-height: 1.6;
-  color: var(--gray-100);
+  color: var(--hi-contrast);
 }
 
 .post > form > textarea {
   width: 100%;
-  background-color: var(--gray-900);
+  background-color: var(--background-color);
   border: 0;
   min-height: 6rem;
   height: 6rem;
   padding: 1rem;
   border-radius: 8px;
-  color: var(--gray-100);
+  color: var(--hi-contrast);
   line-height: 1.4;
   margin-top: 1rem;
   font-weight: 400;
   resize: none;
+  border: 1px solid var(--border-color);
 
   outline: 2px solid transparent;
 
@@ -108,11 +111,11 @@
 }
 
 .post > form > textarea:focus {
-  outline-color: var(--green-500);
+  outline-color: var(--brand-outline-color);
 }
 
 .post > form > textarea::placeholder {
-  color: var(--gray-400);
+  color: var(--lo-contrast);
 }
 
 .post > form > footer {
@@ -126,7 +129,7 @@
 
   border-radius: 8px;
   border: 0;
-  background-color: var(--green-500);
+  background-color: var(--brand-color);
   color: var(--white);
 
   font-weight: bold;
@@ -138,13 +141,13 @@
   transition: background-color 150ms ease-out, outline-color 150ms ease-out;
 }
 
-.post > form > footer > button[type="submit"]:hover {
-  background-color: var(--green-400);
+.post > form > footer > button[type="submit"]:hover,
+.post > form > footer > button[type="submit"]:focus {
+  background-color: var(--brand-hover-color);
 }
 
 .post > form > footer > button[type="submit"]:focus-visible {
-  outline-color: var(--green-400);
-  background-color: var(--green-400);
+  outline-color: var(--brand-outline-color);
 }
 
 .comments {

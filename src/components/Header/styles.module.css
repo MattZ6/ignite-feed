@@ -4,8 +4,10 @@
   justify-content: center;
   gap: 1rem;
 
-  background: var(--gray-800);
+  background: var(--subtle-background-color);
   padding: 1.25rem 1rem;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header > img {

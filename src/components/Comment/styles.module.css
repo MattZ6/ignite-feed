@@ -8,7 +8,7 @@
 }
 
 .container > div {
-  background-color: var(--gray-700);
+  background-color: var(--element-background-color);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -33,7 +33,7 @@
   font-size: 0.75rem;
   line-height: 1.6;
   font-weight: 400;
-  color: var(--gray-400);
+  color: var(--lo-contrast);
 }
 
 .container > div > header > button {
@@ -43,7 +43,7 @@
 
   background: transparent;
   border: 0;
-  color: var(--gray-400);
+  color: var(--lo-contrast);
   cursor: pointer;
 
   width: 2rem;
@@ -57,17 +57,17 @@
 
 .container > div > header > button:hover,
 .container > div > header > button:focus {
-  background-color: var(--gray-800);
-  color: var(--red-500);
+  background-color: var(--danger-hover-background-color);
+  color: var(--danger-hover-color);
 }
 
 .container > div > header > button:focus-visible {
-  outline-color: var(--red-500);
+  outline-color: var(--danger-outline-color);
 }
 
 .container > div > p {
   margin: 1rem 0 0;
-  color: var(--gray-300);
+  color: var(--hi-contrast);
   font-weight: 400;
 }
 
@@ -84,21 +84,22 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
 
-  color: var(--gray-400);
+  color: var(--lo-contrast);
   cursor: pointer;
 
   outline: 2px solid transparent;
 
-  transition: color 150ms ease-out, outline-color 150ms ease-out;
+  transition: color 150ms ease-out, outline-color 150ms ease-out, background-color 150ms ease-out;
 }
 
 .container > footer > button:hover,
 .container > footer > button:focus {
-  color: var(--green-400);
+  color: var(--brand-hover-color);
+  background-color: var(--brand-hover-background-color);
 }
 
 .container > footer > button:focus-visible {
-  outline-color: var(--green-400);
+  outline-color: var(--brand-outline-color);
 }
 
 .container > footer > button > svg {

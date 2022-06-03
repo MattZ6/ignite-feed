@@ -1,17 +1,71 @@
 :root {
   --white: #ffffff;
-  --gray-100: #e1e1e6;
-  --gray-300: #c4c4cc;
-  --gray-400: #8d8d99;
-  --gray-600: #323238;
-  --gray-700: #29292e;
-  --gray-800: #202024;
-  --gray-900: #121214;
 
-  --green-400: #00B37E;
-  --green-500: #00875f;
+  /* Default  */
 
-  --red-500: #F75a68;
+  --background-color: hsl(155, 30.0%, 98.8%);
+  --subtle-background-color: hsl(150, 16.7%, 97.6%);
+  --element-background-color: hsl(151, 10.6%, 95.2%);
+
+  --border-color: hsl(152, 7.2%, 88.4%);
+
+  --lo-contrast: hsl(155, 3.0%, 43.0%);
+  --hi-contrast: hsl(155, 24.0%, 9.0%);
+
+  /* Brand */
+
+  --brand-hover-background-color: hsl(140, 48.7%, 91.0%);
+  
+  --brand-color: hsl(151, 55.0%, 41.5%);
+  --brand-hover-color: hsl(152, 57.5%, 37.6%);
+
+  --brand-outline-color: hsl(146, 38.5%, 69.0%);
+
+  --brand-lo-contrast: hsl(153, 67.0%, 28.5%);
+  --brand-hi-contrast: hsl(155, 40.0%, 14.0%);
+
+  /* Error */
+
+  --danger-hover-background-color: hsl(8, 100%, 94.3%);
+  --danger-hover-color: hsl(10, 71.5%, 50.0%);
+
+  --danger-outline-color: hsl(10, 77.3%, 79.5%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #ffffff;
+
+    /* Default  */
+  
+    --background-color: hsl(155, 7.0%, 8.4%);
+    --subtle-background-color: hsl(150, 7.4%, 10.6%);
+    --element-background-color: hsl(150, 6.7%, 13.1%);
+  
+    --border-color: hsl(150, 5.8%, 19.9%);
+  
+    --lo-contrast: hsl(155, 5.0%, 61.8%);
+    --hi-contrast: hsl(155, 6.0%, 93.0%);
+  
+    /* Brand */
+  
+    --brand-hover-background-color: hsl(154, 48.4%, 12.9%);
+
+    --brand-color: hsl(151, 55.0%, 41.5%);
+    --brand-hover-color: hsl(152, 57.5%, 37.6%);
+  
+    --brand-outline-color: hsl(146, 38.5%, 69.0%);
+  
+    --brand-lo-contrast: hsl(153, 67.0%, 28.5%);
+    --brand-hi-contrast: hsl(155, 40.0%, 14.0%);
+
+    /* Error */
+  
+    --danger-hover-background-color: hsl(7, 56.3%, 18.0%);
+    --danger-hover-color: hsl(10, 81.7%, 59.0%);
+  
+    --danger-outline-color: hsl(8, 71.2%, 29.1%);
+  }
 }
 
 * {
@@ -21,8 +75,8 @@
 }
 
 body {
-  background-color: var(--gray-900);
-  color: var(--white);
+  background-color: var(--background-color);
+  color: var(--hi-contrast);
   -webkit-font-smoothing: antialiased;
 }
 

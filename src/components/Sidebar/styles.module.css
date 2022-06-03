@@ -1,10 +1,18 @@
 .sidebar {
-  background-color: var(--gray-800);
+  background-color: var(--subtle-background-color);
   border-radius: 8px;
   overflow: hidden;
+  
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 
   position: sticky;
   top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: initial;
+  }
 }
 
 .sidebar > img {
@@ -24,19 +32,19 @@
 
 .profile > strong {
   margin-top: 1rem;
-  color: var(--gray-100);
+  color: var(--hi-contrast);
   line-height: 1.6;
 }
 
 .profile > span {
   font-size: 0.875rem;
   font-weight: 400;
-  color: var(--gray-400);
+  color: var(--lo-contrast);
   line-height: 1.6;
 }
 
 .sidebar > footer {
-  border-top: 1px solid var(--gray-600);
+  border-top: 1px solid var(--border-color);
   padding: 1.5rem 2rem 2rem;
 }
 
@@ -50,14 +58,14 @@
 
   font-weight: bold;
   text-decoration: none;
-  color: var(--green-400);
+  color: var(--brand-color);
 
   width: 100%;
   height: 56px;
   padding: 0 1rem;
   background: transparent;
   
-  border: 1px solid var(--green-400);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
 
   outline: 2px solid transparent;
@@ -66,12 +74,13 @@
   transition: color 150ms ease-out, border-color 150ms ease-out, background-color 150ms ease-out, outline-color 150ms ease-out;
 }
 
-.sidebar > footer > a:hover {
+.sidebar > footer > a:hover,
+.sidebar > footer > a:focus {
   color: var(--white);
-  border-color: var(--green-500);
-  background-color: var(--green-500);
+  border-color: var(--brand-hover-color);
+  background-color: var(--brand-hover-color);
 }
 
 .sidebar > footer > a:focus-visible {
-  outline-color: var(--green-400);
+  outline-color: var(--brand-outline-color);
 }
