@@ -47,7 +47,11 @@ export function Post({ post }: Props) {
       publishedAtFormatted: format(post.published_at, "dd LLLL 'at' HH'h' mm'min"),
       publishedAtRelativeToNow: formateRelativeDime(post.published_at),
     };
-  }, [post.published_at])
+  }, [post.published_at]);
+
+  const handleDeleteComment = useCallback((id: string) => {
+    setComments(state => state.filter(comment => comment.id !== id));
+  }, []);
 
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -115,7 +119,14 @@ export function Post({ post }: Props) {
       </form>
 
       <div className={styles.comments}>
-        { comments.map(comment => <Comment key={comment.id} comment={comment} />) }
+        { comments.map(comment => (
+            <Comment
+              key={comment.id}
+              comment={comment}
+              onDelete={() => handleDeleteComment(comment.id)}
+            />
+          )
+        ) }
       </div>
     </article>
   );

@@ -21,9 +21,10 @@ type Comment = {
 
 type Props = {
   comment: Comment;
+  onDelete: () => void;
 }
 
-export function Comment({ comment }: Props) {
+export function Comment({ comment, onDelete }: Props) {
   const {
     publishedAtFormatted,
     publishedAtRelativeToNow
@@ -48,7 +49,11 @@ export function Comment({ comment }: Props) {
               </time>
             </div>
 
-            <button type="button" title="Delete post">
+            <button
+              type="button"
+              title="Delete post"
+              onClick={onDelete}
+            >
               <Trash size={20} />
             </button>
           </header>
