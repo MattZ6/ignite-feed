@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { FormEvent, useCallback, useMemo, useState } from 'react';
+import { FormEvent, ChangeEvent, useCallback, useMemo, useState } from 'react';
 
 import { formateRelativeDime } from '../../utils/dateFormat';
 
@@ -50,7 +50,16 @@ export function Post({ post }: Props) {
   }, [post.published_at]);
 
   const handleDeleteComment = useCallback((id: string) => {
-    setComments(state => state.filter(comment => comment.id !== id));
+    setComments(currentComments => currentComments.filter(comment => comment.id !== id));
+  }, []);
+
+  const handleNewCommentInvalid = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
+    event.target.setCustomValidity('The comment is required');
+  }, []);
+
+  const handleCommentChanged = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
+    event.target.setCustomValidity('');
+    setComment(event.target.value);
   }, []);
 
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
@@ -75,6 +84,8 @@ export function Post({ post }: Props) {
     }, ...state,]);
     setComment('');
   }, [comment, comments]);
+
+  const isNewCommentEmpty = !comment.trim().length;
 
   return (
     <article className={styles.post}>
@@ -109,12 +120,14 @@ export function Post({ post }: Props) {
         <textarea
           name="comment"
           placeholder="Type your comment..."
+          required
+          onInvalid={handleNewCommentInvalid}
           value={comment}
-          onChange={ev => setComment(ev.target.value)}
+          onChange={handleCommentChanged}
         />
 
         <footer>
-          <button type="submit">Publish</button>
+          <button type="submit" disabled={isNewCommentEmpty}>Publish</button>
         </footer>
       </form>
 
@@ -126,7 +139,7 @@ export function Post({ post }: Props) {
               onDelete={() => handleDeleteComment(comment.id)}
             />
           )
-        ) }
+        )}
       </div>
     </article>
   );
