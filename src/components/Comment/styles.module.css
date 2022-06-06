@@ -29,6 +29,10 @@
   line-height: 1.6;
 }
 
+.container > div > header > div > strong.me {
+  color: var(--brand-color);
+}
+
 .container > div > header > div > time {
   font-size: 0.75rem;
   line-height: 1.6;

@@ -1,27 +1,59 @@
+import { format } from 'date-fns';
 import { HandsClapping, Trash } from 'phosphor-react';
+import { useMemo } from 'react';
+import { formateRelativeDime } from '../../utils/dateFormat';
+
 import { Avatar } from '../Avatar';
 
 import styles from './styles.module.css';
 
-export function Comment() {
+type Comment = {
+  id: string;
+  mine: boolean;
+  author: {
+    name: string;
+    avatar_url: string;
+    role: string;
+  };
+  content: string;
+  created_at: Date;
+}
+
+type Props = {
+  comment: Comment;
+}
+
+export function Comment({ comment }: Props) {
+  const {
+    publishedAtFormatted,
+    publishedAtRelativeToNow
+  } = useMemo(() => {
+    return {
+      publishedAtFormatted: format(comment.created_at, "dd LLLL 'at' HH'h' mm'min"),
+      publishedAtRelativeToNow: formateRelativeDime(comment.created_at),
+    };
+  }, [comment.created_at])
+
   return (
     <div className={styles.comment}>
-      <Avatar url="https://github.com/MattZ6.png?size=56" hasBorder={false} />
+      <Avatar url={comment.author.avatar_url} hasBorder={false} />
 
       <div className={styles.container}>
         <div>
           <header>
             <div>
-              <strong>You</strong>
-              <time title="june 2 16pm" dateTime="2022-06-02 16:00:00">1hr ago</time>
+              <strong className={`${comment.mine ? styles.me : ''}`}>{ comment.mine ? 'You' : comment.author.name }</strong>
+              <time title={publishedAtFormatted} dateTime={comment.created_at.toISOString()}>
+                { publishedAtRelativeToNow }
+              </time>
             </div>
 
             <button type="button" title="Delete post">
               <Trash size={20} />
             </button>
           </header>
-          
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eligendi fugiat aut?</p>
+
+          <p>{ comment.content }</p>
         </div>
 
         <footer>

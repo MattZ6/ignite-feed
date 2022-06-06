@@ -68,7 +68,7 @@ yarn dev
 
 > Contributions, issues and new features are **always welcome**! You can explore them [here](https://github.com/MattZ6/ignite-feed/issues).
 
-Feel free to submit a new issue with a respective title and description on the the Auth Flow API repository. If you already found a solution to your problem, i would love to review your pull request! Have a look at our [contribution guidelines](.github/CONTRIBUTING.md) to find out about the coding standards.
+Feel free to submit a new issue with a respective title and description on the the **Ignite Feed** repository. If you already found a solution to your problem, I would love to review your pull request! Have a look at our [contribution guidelines](.github/CONTRIBUTING.md) to find out about the coding standards.
 
 
 ## 📜 License

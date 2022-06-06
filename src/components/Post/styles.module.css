@@ -119,8 +119,8 @@
 }
 
 .post > form > footer {
-  visibility: hidden;
-  max-height: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .post > form > footer > button[type="submit"] {
