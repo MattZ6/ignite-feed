@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { HandsClapping, Trash } from 'phosphor-react';
-import { useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { formateRelativeDime } from '../../utils/dateFormat';
 
 import { Avatar } from '../Avatar';
@@ -25,6 +25,8 @@ type Props = {
 }
 
 export function Comment({ comment, onDelete }: Props) {
+  const [applauses, setApplauses] = useState(0);
+
   const {
     publishedAtFormatted,
     publishedAtRelativeToNow
@@ -33,7 +35,11 @@ export function Comment({ comment, onDelete }: Props) {
       publishedAtFormatted: format(comment.created_at, "dd LLLL 'at' HH'h' mm'min"),
       publishedAtRelativeToNow: formateRelativeDime(comment.created_at),
     };
-  }, [comment.created_at])
+  }, [comment.created_at]);
+
+  const handleApplause = useCallback(() => {
+    setApplauses(count => count + 1);
+  }, []);
 
   return (
     <div className={styles.comment}>
@@ -62,9 +68,9 @@ export function Comment({ comment, onDelete }: Props) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={handleApplause}>
             <HandsClapping size={20} />
-            Applause <span>20</span>
+            Applause { !!applauses && (<span>{ applauses }</span>) }
           </button>
         </footer>
       </div>
