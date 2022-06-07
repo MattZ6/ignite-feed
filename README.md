@@ -5,8 +5,6 @@
 
   > Posts feed application for Ignite Bootcamp.
 
-  <strong>🚧 Under development... 🚧</strong>
-
   [![Netlify Status](https://api.netlify.com/api/v1/badges/01e9e021-7272-4845-885e-e92d23d54a35/deploy-status)](https://app.netlify.com/sites/ignite-feed/deploys)
 </div>
 
