@@ -1,0 +1,16 @@
+{
+  "name": "Posts feed application for Ignite Bootcamp 🔥",
+  "short_name": "Ignite Feed",
+  "icons": [
+    {
+      "src": "src/assets/ignite-logo.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "./?utm_source=web_app_manifest",
+  "display": "standalone",
+  "background_color": "hsl(155, 7.0%, 8.4%)",
+  "theme_color": "hsl(155, 7.0%, 8.4%)",
+  "orientation": "portrait"
+}
